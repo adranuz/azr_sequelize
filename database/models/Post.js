@@ -2,12 +2,13 @@ const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../db')
 
 class Post extends Model {}
-User.init({
+Post.init({
   title: DataTypes.STRING,
   body: DataTypes.TEXT
 },{
   sequelize,
-  modelName: "post"
+  modelName: "posts",
+  timestamps: false,
 })
 
 module.exports = Post
