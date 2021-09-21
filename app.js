@@ -19,8 +19,8 @@ app.use('/api', routes)
 app.listen(PORT, () => {
   console.log("port " + PORT)
   sequelize.sync({
-    force: true,
-    // logging: false
+    force: false,
+    logging: false
   })
     .then(() => console.log('DB connected'))
     .catch(error => console.log(error))

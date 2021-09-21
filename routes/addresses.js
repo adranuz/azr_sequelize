@@ -18,4 +18,17 @@ router.get('/', async (req, res) => {
   })
 })
 
+router.delete('/:id', async (req, res) => {
+
+  const result = await Address.destroy({
+    where: {
+      id: req.params.id,
+    }
+  })
+  res.json({
+    msg: 'addres deleted',
+    data: result,
+  })
+})
+
 module.exports = router

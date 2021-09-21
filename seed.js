@@ -14,7 +14,7 @@ const users = [
 // Direcciones
 const addresses = [
     { street: "Calle de la vida 2", residentId: 1 },
-    { street: "Debajo del puente s/n", residentId: 2 },
+    { street: "Debajo del puente", residentId: 2 },
     { street: "Isla de Tabarca, 5", residentId: 3 },
 ];
 
@@ -35,11 +35,11 @@ sequelize.sync({ force: false }).then(() => {
     console.log("Conexión establecida...");
 }).then(() => {
     // Rellenar usuarios
-    users.forEach(user => User.create(user));
+    users.forEach(async user => await User.create(user));
 }).then(() => {
     // Rellenar direcciones
-    addresses.forEach(address => Address.create(address));
+    addresses.forEach(async address => await Address.create(address));
 }).then(() => {
     // Rellenar posts
-    posts.forEach(post => Post.create(post));
+    posts.forEach(async post => await Post.create(post));
 });

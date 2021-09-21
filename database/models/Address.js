@@ -6,8 +6,9 @@ Address.init({
   street: DataTypes.STRING,
 },{
   sequelize,
-  modelName: "addresses",
+  modelName: "address",
   timestamps: false,
+  // paranoid: true,
 })
 
 module.exports = Address

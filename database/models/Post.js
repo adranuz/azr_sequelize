@@ -7,7 +7,7 @@ Post.init({
   body: DataTypes.TEXT
 },{
   sequelize,
-  modelName: "posts",
+  modelName: "post",
   timestamps: false,
 })
 

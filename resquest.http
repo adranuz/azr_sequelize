@@ -1,20 +1,28 @@
 
-### USER REQUESTS
+### -------------------------------- USER REQUESTS
 POST http://localhost:3000/api/users HTTP/1.1
 content-type: application/json
 
 {
-    "name": "sampsle",
+    "name": "yololo",
     "age": 23,
     "email": "osrreso@gmail.com",
     "role": 1,
-    "street": "la calle de la vida"
-
+    "street": "la malle los olivos"
 }
 ###
 GET http://localhost:3000/api/users HTTP/1.1
+### Delete user
+DELETE http://localhost:3000/api/users/26 HTTP/1.1
 
-### POSTS REQUESTS
+
+### metodo magico de asicacion getDomicilio
+GET http://localhost:3000/api/users/1/domicilio HTTP/1.1
+
+### metodo magico de asicacion getDomicilio
+GET http://localhost:3000/api/users/1/posts HTTP/1.1
+
+### -------------------------------- POSTS REQUESTS
 POST http://localhost:3000/api/posts HTTP/1.1
 content-type: application/json
 
@@ -36,4 +44,10 @@ content-type: application/json
 }
 ###
 DELETE http://localhost:3000/api/posts/3 HTTP/1.1
+
+
+### -------------------------------- ADDRESSES REQUESTS
+GET http://localhost:3000/api/addresses HTTP/1.1
+###
+DELETE http://localhost:3000/api/addresses/7 HTTP/1.1
 ###

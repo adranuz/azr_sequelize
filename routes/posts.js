@@ -1,9 +1,17 @@
 const express = require('express')
 const router = express.Router()
 const Post = require('../database/models/Post')
+const User = require('../database/models/User')
 
 router.get('/', async (req, res) => {
-  const result = await Post.findAll()
+  const result = await Post.findAll({
+    attributes: ['title', 'body'],
+    include: {
+      model: User,
+      as: 'author',
+      attributes: ['name']
+    }
+  })
   res.json({
     msg: 'post list',
     data: result,

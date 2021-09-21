@@ -13,7 +13,7 @@ User.init({
         msg: "Letters and numbers only"
       },
       len: {
-        args: [3, 20],
+        args: [3, 255],
         msg: "Should be between 3 and 20 chars"
       },
       notNull: {
@@ -28,11 +28,11 @@ User.init({
         args: true,
         msg: "Should be a number"
       },
-      ownValidation (value) {
-        if (value >150 || value < 18) {
-          throw new Error("It must be a valid age")
-        }
-      }
+      // ownValidation (value) {
+      //   if (value >150 || value < 18) {
+      //     throw new Error("It must be a valid age")
+      //   }
+      // }
     }
   },
   email: {
@@ -55,8 +55,9 @@ User.init({
   },
 }, {
   sequelize,
-  modelName: "users",
+  modelName: "user",
   timestamps: false,
+  paranoid: true,
 })
 
 module.exports = User
