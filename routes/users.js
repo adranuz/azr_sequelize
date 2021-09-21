@@ -59,6 +59,7 @@ router.post('/', async (req, res) => {
   const { name, age, role, email, street } = req.body
   try {
     /* // user and address
+    */
     const user = await User.create({
       name, age, role, email,
       domicilio: { 
@@ -67,13 +68,12 @@ router.post('/', async (req, res) => {
     }, {
       include: 'domicilio',
     })
-    */
 
     /* // user and then address
-    */
     let user = await User.create({name,age,role,email})
     const address = await Address.create({street})
     user = await user.setDomicilio(address)
+    */
 
     /* // user and then address
     let user = await User.build({ name, age, role, email })

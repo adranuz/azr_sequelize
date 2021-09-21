@@ -57,7 +57,7 @@ User.init({
   sequelize,
   modelName: "user",
   timestamps: false,
-  paranoid: true,
+  // paranoid: true,
 })
 
 module.exports = User

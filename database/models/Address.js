@@ -8,7 +8,7 @@ Address.init({
   sequelize,
   modelName: "address",
   timestamps: false,
-  // paranoid: true,
+  paranoid: true
 })
 
 module.exports = Address
